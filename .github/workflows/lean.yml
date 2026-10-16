@@ -23,11 +23,11 @@ jobs:
       - name: Fetch compiled dependencies
         run: >-
           lake exe cache get
-          Mathlib/LinearAlgebra/Charpoly/Basic.lean
-          Mathlib/LinearAlgebra/Dual/Lemmas.lean
-          Mathlib/LinearAlgebra/Eigenspace/Triangularizable.lean
-          Mathlib/Analysis/Calculus/Deriv/MeanValue.lean
-          Mathlib/Analysis/SpecialFunctions/ExpDeriv.lean
-          Mathlib/Tactic.lean
+          Mathlib.LinearAlgebra.Charpoly.Basic
+          Mathlib.LinearAlgebra.Dual.Lemmas
+          Mathlib.LinearAlgebra.Eigenspace.Triangularizable
+          Mathlib.Analysis.Calculus.Deriv.MeanValue
+          Mathlib.Analysis.SpecialFunctions.ExpDeriv
+          Mathlib.Tactic
       - name: Build and audit
         run: python3 scripts/check.py
