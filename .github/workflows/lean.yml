@@ -1,0 +1,33 @@
+name: Lean proofs
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install elan
+        shell: bash
+        run: |
+          curl -sSf https://elan.lean-lang.org/elan-init.sh -o elan-init.sh
+          sh elan-init.sh -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Fetch compiled dependencies
+        run: >-
+          lake exe cache get
+          Mathlib/LinearAlgebra/Charpoly/Basic.lean
+          Mathlib/LinearAlgebra/Dual/Lemmas.lean
+          Mathlib/LinearAlgebra/Eigenspace/Triangularizable.lean
+          Mathlib/Analysis/Calculus/Deriv/MeanValue.lean
+          Mathlib/Analysis/SpecialFunctions/ExpDeriv.lean
+          Mathlib/Tactic.lean
+      - name: Build and audit
+        run: python3 scripts/check.py
