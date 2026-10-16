@@ -1,0 +1,18 @@
++ lake build
+Build completed successfully (3110 jobs).
++ lake env lean Verification.lean
+'ControlTheory.reachable_minimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ControlTheory.reachable_closedLoop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ControlTheory.reachable_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ControlTheory.controllable_iff_dual_observable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ControlTheory.reachable_eq_finiteReachable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ControlTheory.range_kalmanMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ControlTheory.controllable_iff_surjective_kalmanMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ControlTheory.observable_iff_eigenvector_test' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ControlTheory.controllable_iff_hautus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ControlTheory.Examples.doubleIntegrator_controllable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ControlTheory.Examples.twoStepControl_reaches' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ControlTheory.Examples.hiddenMode_not_controllable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ControlTheory.Examples.energy_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ControlTheory.Examples.state_square_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS: 11 Lean source modules; 14 principal results audited.
